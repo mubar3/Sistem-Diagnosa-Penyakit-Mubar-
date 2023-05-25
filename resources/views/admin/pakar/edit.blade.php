@@ -5,7 +5,7 @@
 	<x-alert-error/>
 	
 	<x-card>
-		<form action="{{ route('admin.pakar_member.update', $user->id) }}" method="post">
+		<form action="{{ route('admin.pakar_member.update', $user->id) }}" enctype="multipart/form-data" method="post">
 			@csrf
 
 			<div class="row">
@@ -20,6 +20,12 @@
 			<div class="row">
 				<div class="col-md-6">
 					<x-input text="Profesi" name="profesi" type="text" value="{{ $user->profesi }}" />
+				</div>
+				<div class="col-md-6">
+					@if (!empty($user->foto))
+						<img width="100px" src="{{ asset('/storage/foto/'.$user->foto) }}" class="rounded">
+					@endif
+					<x-input text="foto" name="foto" type="file" />
 				</div>
 			</div>
 

@@ -16,87 +16,87 @@ class CreateGejalaSeeder extends Seeder
     {
         $data = [
             [
-                'nama' => 'Demam',
+                'nama' => 'Demam tinggi',
                 'kode' => 'G001'
             ],
             [
-                'nama' => 'Demam tinggi',
+                'nama' => 'tidak nafsu makan',
                 'kode' => 'G002'
             ],
             [
-                'nama' => 'Batuk',
+                'nama' => 'keluar air liur berlebihan',
                 'kode' => 'G003'
             ],
             [
-                'nama' => 'Diare',
+                'nama' => 'produksi susu menurun',
                 'kode' => 'G004'
             ],
             [
-                'nama' => 'Mual',
+                'nama' => 'penurunan berat badan permanen',
                 'kode' => 'G005'
             ],
             [
-                'nama' => 'Muntah',
+                'nama' => 'pembengkakan pada area kaki',
                 'kode' => 'G006'
             ],
             [
-                'nama' => 'Nyeri otot',
+                'nama' => 'proses gayemi tidak terjadi',
                 'kode' => 'G007'
             ],
             [
-                'nama' => 'Sakit perut',
+                'nama' => 'Siku-siku kaki mulai lemas',
                 'kode' => 'G008'
             ],
             [
-                'nama' => 'Kram otot',
+                'nama' => 'nafsu makan menuun',
                 'kode' => 'G009'
             ],
             [
-                'nama' => 'Pilek',
+                'nama' => 'buku kusam & berdiri',
                 'kode' => 'G010'
             ],
             [
-                'nama' => 'Muntah',
+                'nama' => 'diare berkepanjangan',
                 'kode' => 'G011'
             ],
             [
-                'nama' => 'Tubuh menggigil',
+                'nama' => 'mata berair',
                 'kode' => 'G012'
             ],
             [
-                'nama' => 'Tubuh nyeri',
+                'nama' => 'berat badan menuurun',
                 'kode' => 'G013'
             ],
             [
-                'nama' => 'Penyakit kuning',
+                'nama' => 'pantat kopor',
                 'kode' => 'G014'
             ],
             [
-                'nama' => 'Nyeri sendi',
+                'nama' => 'perut buncit',
                 'kode' => 'G015'
             ],
             [
-                'nama' => 'Nyeri perut',
+                'nama' => 'kaki terlihat kurus',
                 'kode' => 'G016'
             ],
             [
-                'nama' => 'Trombosit turun',
+                'nama' => 'sapi ambruk',
                 'kode' => 'G017'
             ],
             [
-                'nama' => 'Muncul bintik merah',
+                'nama' => 'sapi dingklang',
                 'kode' => 'G018'
             ],
             [
-                'nama' => 'Gatal',
+                'nama' => 'kelumpuhan pada sapi',
                 'kode' => 'G019'
             ],
             [
-                'nama' => 'Sakit di persendian',
+                'nama' => 'batuk terus menerus',
                 'kode' => 'G020'
             ],
             [
-                'nama' => 'Sakit kepala',
+                'nama' => 'hidung berlendir',
                 'kode' => 'G021'
             ]
         ];

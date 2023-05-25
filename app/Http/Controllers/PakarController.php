@@ -24,8 +24,12 @@ class PakarController extends Controller
 
     public function index(Request $request)
     {
+        $role=DB::table('model_has_roles')->where('model_id',auth()->user()->id)->first();
+        // return $role;
         $pakars = Pakar::paginate(10);
-        return view('admin.pakar.index',compact('pakars'));
+        return view('admin.pakar.index',compact('pakars'))->with([
+            "role" => $role->role_id
+        ]);
     }
     
     public function create()
@@ -36,6 +40,15 @@ class PakarController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        
+        if($request->hasFile('foto')){
+            $ext  = $request->foto->getClientOriginalExtension();
+            $foto = $request->name.rand(1,1000).'.'.$ext;
+    
+            $request->foto->storeAs('public/foto', $foto);
+            $input['foto']=$foto;
+        }
+
         $user = Pakar::create($input);
      
         return redirect()->back()
@@ -52,6 +65,16 @@ class PakarController extends Controller
     public function update(Request $request, $id)
     {
         $input = $request->all();
+        
+        if($request->hasFile('foto')){
+            $ext  = $request->foto->getClientOriginalExtension();
+            $foto = $request->name.rand(1,1000).'.'.$ext;
+    
+            $request->foto->storeAs('public/foto', $foto);
+            $input['foto']=$foto;
+        }else{
+            unset($input['foto']);
+        }
     
         $pakar = Pakar::find($id);
         $pakar->update($input);

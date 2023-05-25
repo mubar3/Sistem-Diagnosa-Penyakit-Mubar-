@@ -7,12 +7,15 @@
 	<x-card>
 		<x-slot name="title">All Pakar</x-slot>
 		<x-slot name="option">
+			@if ($role == 1)
 			<a href="{{ route('admin.pakar_member.create') }}" class="btn btn-success">
 				<i class="fas fa-plus"></i>
 			</a>
+			@endif
 		</x-slot>
 		<table class="table table-bordered">
 			<thead>
+				<th>Foto</th>
 				<th>Name</th>
 				<th>Asal</th>
 				<th>Profesi</th>
@@ -21,19 +24,26 @@
 			<tbody>
 				@forelse($pakars as $user)
 				<tr>
+					<td>
+						@if (!empty($user->foto))
+							<img width="100px" src="{{ asset('/storage/foto/'.$user->foto) }}" class="rounded">
+						@endif
+					</td>
 					<td>{{ $user->name }}</td>
 					<td>{{ $user->asal }}</td>
 					<td>{{ $user->profesi }}</td>
 					<td class="text-center">
 						<button type="button" class="btn btn-info mr-1 info"
-						data-name="{{ $user->name }}" data-asal="{{ $user->asal }}" data-profesi="{{ $user->profesi }}" data-created="{{ $user->created_at->format('d-M-Y H:m:s') }}">
+						data-name="{{ $user->name }}" data-foto="{{ $user->foto }}" data-asal="{{ $user->asal }}" data-profesi="{{ $user->profesi }}" data-created="{{ $user->created_at->format('d-M-Y H:m:s') }}">
 							<i class="fas fa-eye"></i>
 						</button>
-						<a href="{{ route('admin.pakar_member.edit', $user->id) }}" class="btn btn-primary mr-1"><i class="fas fa-edit"></i></a> 
-						<form action="{{ route('admin.pakar_member.delete', $user->id) }}" style="display: inline-block;" method="POST">
-							@csrf
-							<button type="button" class="btn btn-danger delete"><i class="fas fa-trash"></i></button>
-						</form>
+						@if ($role == 1)
+							<a href="{{ route('admin.pakar_member.edit', $user->id) }}" class="btn btn-primary mr-1"><i class="fas fa-edit"></i></a> 
+							<form action="{{ route('admin.pakar_member.delete', $user->id) }}" style="display: inline-block;" method="POST">
+								@csrf
+								<button type="button" class="btn btn-danger delete"><i class="fas fa-trash"></i></button>
+							</form>
+						@endif
 					</td>
 				</tr>
 				@empty
@@ -52,6 +62,20 @@
 		<x-slot name="id">infoModal</x-slot>
 		<x-slot name="title">Information</x-slot>
 
+		{{-- <img width="100px" src="{{ asset('/storage/foto/mb378.jpg') }}" id="foto_modal" class="rounded"> --}}
+		<div class="row">
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm">
+			  </div>
+			  <div class="col-sm">
+				  <img width="100px" id="foto-modal" class="rounded">
+			  </div>
+			  <div class="col-sm">
+			  </div>
+			</div>
+		  </div>
 		<div class="row mb-2">
 			<div class="col-6">
 				<b>Name</b>
@@ -85,6 +109,9 @@
 
 				$('#name-modal').text($(this).data('name'))
 				$('#asal-modal').text($(this).data('asal'))
+				if($(this).data('foto') != ''){
+					document.getElementById("foto-modal").src="/storage/foto/"+$(this).data('foto')
+				}
 				$('#profesi-modal').text($(this).data('profesi'))
 				$('#created-modal').text($(this).data('created'))
 

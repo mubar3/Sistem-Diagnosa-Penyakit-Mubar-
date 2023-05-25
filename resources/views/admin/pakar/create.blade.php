@@ -8,7 +8,7 @@
 	<x-alert type="success" message="{{ session()->get('success') }}" />
 	@endif
 	<x-card>
-		<form action="{{ route('admin.pakar_member.create') }}" method="post">
+		<form action="{{ route('admin.pakar_member.create') }}" enctype="multipart/form-data" method="post">
 			@csrf
 
 			<div class="row">
@@ -22,6 +22,9 @@
 			<div class="row">
 				<div class="col-md-6">
 					<x-input text="Profesi" name="profesi" type="text" />
+				</div>
+				<div class="col-md-6">
+					<x-input text="foto" name="foto" type="file" />
 				</div>
 			</div>
 

@@ -12,6 +12,7 @@ class Pakar extends Model
     protected $fillable = [
         'name',
         'asal',
+        'foto',
         'profesi'
     ];
 }

@@ -8,7 +8,8 @@ use App\Http\Controllers\{
 	PenyakitController,
 	GejalaController,
 	RuleController,
-	UserController
+	UserController,
+	PakarController
 };
 
 Route::redirect('/', '/login');
@@ -38,6 +39,14 @@ Route::group([
 	Route::get('/member/{id}/edit', [UserController::class, 'edit'])->name('member.edit');
 	Route::post('/member/{id}/update', [UserController::class, 'update'])->name('member.update');
 	Route::post('/member/{id}/delete', [UserController::class, 'destroy'])->name('member.delete');
+	
+	// Pakar menu
+	Route::get('/pakar_member', [PakarController::class, 'index'])->name('pakar_member');
+	Route::get('/pakar_member/create', [PakarController::class, 'create'])->name('pakar_member.create');
+	Route::post('/pakar_member/create', [PakarController::class, 'store'])->name('pakar_member.create');
+	Route::get('/pakar_member/{id}/edit', [PakarController::class, 'edit'])->name('pakar_member.edit');
+	Route::post('/pakar_member/{id}/update', [PakarController::class, 'update'])->name('pakar_member.update');
+	Route::post('/pakar_member/{id}/delete', [PakarController::class, 'destroy'])->name('pakar_member.delete');
 
 	// menu penyakit
 	Route::get('/penyakit', [PenyakitController::class, 'index'])->name('penyakit');
@@ -66,6 +75,10 @@ Route::group([
 
 	Route::get('/tes', function() {
 	})->name('test');
+
+	Route::get('/panduan', function() {
+        return view('admin.panduan');
+	})->name('panduan');
 
 });
 

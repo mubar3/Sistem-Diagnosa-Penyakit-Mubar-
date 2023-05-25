@@ -37,7 +37,27 @@
     @endcan
 
     @can('member-list')
+    
+    <x-nav-link 
+        text="Panduan" 
+        icon="th-list" 
+        url="{{ route('admin.panduan') }}"
+        active="{{ request()->routeIs('admin.panduan') ? ' active' : '' }}"
+    />
+    @endcan
+
+    @can('member-list')
     <hr class="sidebar-divider mt-3 mb-0">
+    
+    <x-nav-link 
+        text="Daftar Pakar" 
+        icon="users" 
+        url="{{ route('admin.pakar_member') }}"
+        active="{{ request()->routeIs('admin.pakar_member') ? ' active' : '' }}"
+    />
+    @endcan
+
+    @can('member-list')
     
     <x-nav-link 
         text="Daftar User" 

@@ -50,7 +50,10 @@ class PermissionTableSeeder extends Seeder
            'diagnosa-create',
 
            'riwayat-list',
-           'riwayat-show'
+           'riwayat-show',
+
+           'pakar-list',
+           'panduan-list'
         ];
      
         foreach ($permissions as $permission) {

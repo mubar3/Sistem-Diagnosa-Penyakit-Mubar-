@@ -36,7 +36,7 @@
     />
     @endcan
 
-    @can('member-list')
+    @can('panduan-list')
     
     <x-nav-link 
         text="Panduan" 
@@ -46,7 +46,7 @@
     />
     @endcan
 
-    @can('member-list')
+    @can('pakar-list')
     <hr class="sidebar-divider mt-3 mb-0">
     
     <x-nav-link 

@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
 
         $role = Role::create(['name' => 'Pengguna']);
    
-        $role->syncPermissions([24, 25, 26, 27]);
+        $role->syncPermissions([24, 25, 26, 27, 28, 29]);
      
         $user->assignRole([$role->id]);   
     }

@@ -26,8 +26,8 @@ Ini adalah implementasi sistem pakar dengan menggunakan metode Certainty Factor,
 You can fork or clone this project
 
 ```sh
-git clone https://github.com/superXdev/Sistem-Diagnosa-Penyakit
-cd Sistem-Diagnosa-Penyakit
+git clone https://github.com/mubar3/Sistem-Diagnosa-Penyakit-Mubar-.git
+cd Sistem-Diagnosa-Penyakit-Mubar
 composer install
 cp .env.example .env <-- edit db config
 php artisan install

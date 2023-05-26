@@ -19,6 +19,7 @@
 				<th>Name</th>
 				<th>Asal</th>
 				<th>Profesi</th>
+				<th>Deskripsi</th>
 				<th>Action</th>
 			</thead>
 			<tbody>
@@ -32,9 +33,10 @@
 					<td>{{ $user->name }}</td>
 					<td>{{ $user->asal }}</td>
 					<td>{{ $user->profesi }}</td>
+					<td>{{ $user->deskripsi }}</td>
 					<td class="text-center">
 						<button type="button" class="btn btn-info mr-1 info"
-						data-name="{{ $user->name }}" data-foto="{{ $user->foto }}" data-asal="{{ $user->asal }}" data-profesi="{{ $user->profesi }}" data-created="{{ $user->created_at->format('d-M-Y H:m:s') }}">
+						data-name="{{ $user->name }}" data-foto="{{ $user->foto }}" data-asal="{{ $user->asal }}" data-profesi="{{ $user->profesi }}" data-deskripsi="{{ $user->deskripsi }}" data-created="{{ $user->created_at->format('d-M-Y H:m:s') }}">
 							<i class="fas fa-eye"></i>
 						</button>
 						@if ($role == 1)
@@ -96,6 +98,12 @@
 		</div>
 		<div class="row mb-2">
 			<div class="col-6">
+				<b>Deskripsi</b>
+			</div>
+			<div class="col-6" id="deskripsi-modal"></div>
+		</div>
+		<div class="row mb-2">
+			<div class="col-6">
 				<b>Created</b>
 			</div>
 			<div class="col-6" id="created-modal"></div>
@@ -114,6 +122,7 @@
 				}
 				$('#profesi-modal').text($(this).data('profesi'))
 				$('#created-modal').text($(this).data('created'))
+				$('#deskripsi-modal').text($(this).data('deskripsi'))
 
 				$('#infoModal').modal('show')
 			})

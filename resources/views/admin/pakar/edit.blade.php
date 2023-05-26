@@ -28,6 +28,11 @@
 					<x-input text="foto" name="foto" type="file" />
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<x-input text="Deskripsi" name="deskripsi" type="text" value="{{ $user->deskripsi }}"  />
+				</div>
+			</div>
 
 
 			<x-button type="primary" text="Submit" for="submit" />

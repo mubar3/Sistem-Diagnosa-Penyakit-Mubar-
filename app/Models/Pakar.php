@@ -13,6 +13,7 @@ class Pakar extends Model
         'name',
         'asal',
         'foto',
-        'profesi'
+        'profesi',
+        'deskripsi'
     ];
 }

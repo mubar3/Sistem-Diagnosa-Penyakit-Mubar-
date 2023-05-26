@@ -19,6 +19,7 @@ class CreatePakarsTable extends Migration
             $table->string('asal');
             $table->string('profesi');
             $table->string('foto')->nullable();
+            $table->text('deskripsi');
             $table->timestamps();
         });
     }
